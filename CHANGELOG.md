@@ -2,6 +2,12 @@
 
 All notable changes to the SpaceXAI TypeScript SDK will be documented in this file.
 
+## [Unreleased]
+
+### Changed
+
+- `guidelines` on `responses.create()`: `category` is now `"nsfw"`, `"violence"`, or `"profanity"`, and `behavior` is `"decline"`.
+
 ## [0.2.4] - 2026-10-16
 
 ### Added

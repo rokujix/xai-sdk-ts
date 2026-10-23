@@ -6,10 +6,10 @@ type Guideline = NonNullable<CreateParams["guidelines"]>[number];
 
 export type GuidelinesAreOptional = Assert<IsOptional<CreateParams, "guidelines">>;
 export type GuidelineCategories = Assert<
-  [Guideline["category"]] extends ["sexual" | "violence" | "self_harm" | "illicit" | "profanity"] ? true : false
+  [Guideline["category"]] extends ["nsfw" | "violence" | "profanity"] ? true : false
 >;
 export type GuidelineBehaviors = Assert<
-  [Guideline["behavior"]] extends ["decline" | "offer_support"] ? true : false
+  [Guideline["behavior"]] extends ["decline"] ? true : false
 >;
 
 export const guidelinesExample = {
@@ -17,7 +17,7 @@ export const guidelinesExample = {
   input: "Hello",
   guidelines: [
     { type: "policy", category: "violence", behavior: "decline" },
-    { type: "policy", category: "self_harm", behavior: "offer_support" },
+    { type: "policy", category: "nsfw", behavior: "decline" },
   ],
 } satisfies CreateParams;
 
